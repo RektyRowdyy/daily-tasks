@@ -18,8 +18,8 @@ export class TodoItem {
   protected isEditing = signal(false);
   protected editText = signal('');
 
-  toggleComplete(): void {
-    this.todoService.toggleTodo(this.todo().id);
+  async toggleComplete(): Promise<void> {
+    await this.todoService.toggleTodo(this.todo().id);
   }
 
   onEditInput(event: Event): void {
@@ -32,10 +32,10 @@ export class TodoItem {
     this.isEditing.set(true);
   }
 
-  saveEdit(): void {
+  async saveEdit(): Promise<void> {
     const text = this.editText().trim();
     if (text) {
-      this.todoService.updateTodo(this.todo().id, text);
+      await this.todoService.updateTodo(this.todo().id, text);
     }
     this.isEditing.set(false);
   }
@@ -45,8 +45,8 @@ export class TodoItem {
     this.editText.set('');
   }
 
-  deleteTodo(): void {
-    this.todoService.deleteTodo(this.todo().id);
+  async deleteTodo(): Promise<void> {
+    await this.todoService.deleteTodo(this.todo().id);
   }
 
   onKeyPress(event: KeyboardEvent): void {

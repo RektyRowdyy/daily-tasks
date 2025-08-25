@@ -18,10 +18,10 @@ export class TodoInput {
     this.newTodoText.set(target.value);
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     const text = this.newTodoText().trim();
     if (text) {
-      this.todoService.addTodo(text);
+      await this.todoService.addTodo(text);
       this.newTodoText.set('');
     }
   }

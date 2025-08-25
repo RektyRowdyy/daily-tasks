@@ -1,5 +1,25 @@
 <app-pwa-status />
+
+<!-- Error message -->
+@if (error()) {
+  <div class="error-banner">
+    <div class="error-content">
+      <span class="error-icon">⚠️</span>
+      <span class="error-message">{{ error() }}</span>
+      <button class="error-dismiss" (click)="clearError()">×</button>
+    </div>
+  </div>
+}
+
 <div class="todo-app">
+  <!-- Loading indicator -->
+  @if (isLoading()) {
+    <div class="loading-banner">
+      <div class="loading-spinner"></div>
+      <span>Loading...</span>
+    </div>
+  }
+  
   <app-todo-header />
   <app-todo-input />
   <app-todo-filters />

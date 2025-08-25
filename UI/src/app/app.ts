@@ -6,6 +6,7 @@ import { TodoList } from './components/todo-list/todo-list';
 import { PwaStatus } from './components/pwa-status/pwa-status';
 import { ThemeService } from './services/theme';
 import { PwaService } from './services/pwa';
+import { TodoService } from './services/todo';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +17,12 @@ import { PwaService } from './services/pwa';
 export class App {
   private themeService = inject(ThemeService);
   private pwaService = inject(PwaService);
+  protected todoService = inject(TodoService);
+
+  readonly isLoading = this.todoService.isLoading;
+  readonly error = this.todoService.currentError;
+
+  clearError(): void {
+    this.todoService.clearError();
+  }
 }

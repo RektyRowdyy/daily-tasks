@@ -1,3 +1,80 @@
+/* Error banner */
+.error-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-error);
+  color: var(--color-error-text);
+  z-index: 1000;
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+}
+
+.error-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.error-icon {
+  font-size: 1.2em;
+}
+
+.error-message {
+  flex: 1;
+  font-weight: 500;
+}
+
+.error-dismiss {
+  background: transparent;
+  border: none;
+  color: var(--color-error-text);
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.error-dismiss:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Loading banner */
+.loading-banner {
+  background: var(--color-surface-light);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-border);
+  border-top: 2px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .todo-app {
   max-width: 600px;
   margin: 0 auto;
@@ -8,9 +85,18 @@
   gap: var(--spacing-xl);
 }
 
+/* Add margin top when error banner is present */
+body:has(.error-banner) .todo-app {
+  margin-top: 80px;
+}
+
 @media (max-width: 768px) {
   .todo-app {
     padding: var(--spacing-lg) var(--spacing-md);
     gap: var(--spacing-lg);
+  }
+  
+  .error-content {
+    padding: 0 var(--spacing-md);
   }
 }

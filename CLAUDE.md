@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Structure
 
-- `API/` - Backend Express API (ready for integration)
+- `API/` - Complete Express.js backend with RESTful todo endpoints
 - `UI/` - Angular 20 PWA frontend with comprehensive feature set
 
 ### Current Implementation Status
@@ -19,7 +19,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - ✅ **Design System**: Custom brand kit with light/dark/system themes
 - ✅ **PWA Features**: Service worker, offline storage, installable app
 - ✅ **Theming**: Dynamic theme switching with system preference detection
-- ⏳ **Backend**: API structure ready for Express implementation
+- ✅ **Backend**: Complete Express.js API with RESTful endpoints
 
 ### Design System
 The UI follows a comprehensive brand kit documented in `UI/CLAUDE.md`:
@@ -31,7 +31,8 @@ The UI follows a comprehensive brand kit documented in `UI/CLAUDE.md`:
 
 ## Common Commands
 
-All commands should be run from the `UI/` directory:
+### UI Development
+All UI commands should be run from the `UI/` directory:
 
 ### Development
 - `npm run start` or `ng serve` - Start development server on http://localhost:4200
@@ -49,6 +50,18 @@ All commands should be run from the `UI/` directory:
 - `ng generate component <name>` - Generate new component
 - `ng generate --help` - See all available schematics
 
+### API Development  
+All API commands should be run from the `API/` directory:
+
+#### Development
+- `npm run dev` - Start development server with nodemon on port 3000
+- `npm start` - Start production server
+- `node server.js` - Direct server start
+
+#### Package Management
+- `npm install` - Install dependencies
+- `npm install <package>` - Add new dependency
+
 ## Architecture
 
 ### Angular Configuration
@@ -64,7 +77,16 @@ All commands should be run from the `UI/` directory:
 - `src/app/app.routes.ts` - Routing configuration (currently empty)
 
 ### Technology Stack
+
+#### Frontend (Angular 20 PWA)
 - Angular 20 with TypeScript 5.8
 - Uses Angular signals for reactive state management
 - Karma + Jasmine for testing
 - Prettier configured for HTML formatting with Angular parser
+
+#### Backend (Express.js API)
+- Node.js with ES6 modules
+- Express.js 5.x with RESTful endpoints
+- In-memory data storage (ready for database integration)
+- CORS configured for Angular integration
+- Helmet for security headers

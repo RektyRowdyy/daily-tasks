@@ -107,9 +107,9 @@ This file provides design guidance for the "Daily Tasks" minimalist todo app UI.
 - Active: pressed down effect
 
 ## Icons
-- **Style**: Lucide React icons with 2px stroke weight
+- **Style**: Custom CSS-based icons with consistent stroke weight
 - **Usage**: Simple, consistent, meaningful
-- **Common icons**: plus (add), check (complete), edit2 (edit), x (delete), target (filter), archive (all tasks)
+- **Common icons**: plus (add), check (complete), edit (edit), x (delete), target (filter), archive (all tasks)
 
 ## Voice & Messaging
 - **Empty state**: "Nothing here yet!"
@@ -131,8 +131,8 @@ This file provides design guidance for the "Daily Tasks" minimalist todo app UI.
 - Meaningful alt text for decorative elements
 
 ## Implementation Notes
-- **CSS Framework**: Tailwind CSS with custom design system
+- **CSS Framework**: Custom CSS with Angular-specific styling
 - **Font Loading**: Google Fonts with `display: swap`
 - **Animations**: CSS keyframes and transitions
-- **State Management**: React hooks with localStorage persistence
+- **State Management**: Angular signals with localStorage persistence
 - **Pattern**: Subtle grid overlay for paper-like texture
