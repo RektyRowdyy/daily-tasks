@@ -1,0 +1,108 @@
+:root {
+  /* Static values */
+  --font-typewriter: 'JetBrains Mono', 'Courier New', monospace;
+  --font-handwritten: 'Caveat', cursive;
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 3rem;
+  --spacing-4xl: 4rem;
+  
+  --border-width: 2px;
+  --border-radius: 0.5rem;
+  
+  --duration-quick: 0.2s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+  
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Light theme (default) */
+:root,
+:root.light-theme {
+  --todo-primary: hsl(220, 95%, 65%);
+  --todo-accent: hsl(45, 90%, 65%);
+  --todo-success: hsl(145, 65%, 55%);
+  
+  --todo-paper: hsl(45, 25%, 98%);
+  --todo-ink: hsl(222, 20%, 15%);
+  --todo-shadow: hsl(222, 84%, 4.9%);
+  
+  --background-primary: hsl(45, 15%, 97%);
+  --background-gradient: linear-gradient(to bottom right, hsl(45, 25%, 98%), white, hsl(220, 95%, 65%, 0.05));
+  
+  --shadow-card: 4px 4px 0px 0px var(--todo-shadow);
+  --shadow-card-hover: 8px 8px 0px 0px var(--todo-shadow);
+  --shadow-button: 4px 4px 0px 0px var(--todo-shadow);
+  --shadow-button-hover: 6px 6px 0px 0px var(--todo-shadow);
+  --shadow-input: 2px 2px 0px 0px var(--todo-shadow);
+  --shadow-input-focus: 4px 4px 0px 0px var(--todo-shadow);
+}
+
+/* Dark theme */
+:root.dark-theme {
+  --todo-primary: hsl(220, 95%, 70%);
+  --todo-accent: hsl(45, 85%, 70%);
+  --todo-success: hsl(145, 60%, 60%);
+  
+  --todo-paper: hsl(222, 15%, 12%);
+  --todo-ink: hsl(45, 25%, 95%);
+  --todo-shadow: hsl(222, 25%, 8%);
+  
+  --background-primary: hsl(222, 20%, 8%);
+  --background-gradient: linear-gradient(to bottom right, hsl(222, 15%, 10%), hsl(222, 20%, 8%), hsl(220, 95%, 15%, 0.1));
+  
+  --shadow-card: 4px 4px 0px 0px var(--todo-shadow);
+  --shadow-card-hover: 8px 8px 0px 0px var(--todo-shadow);
+  --shadow-button: 4px 4px 0px 0px var(--todo-shadow);
+  --shadow-button-hover: 6px 6px 0px 0px var(--todo-shadow);
+  --shadow-input: 2px 2px 0px 0px var(--todo-shadow);
+  --shadow-input-focus: 4px 4px 0px 0px var(--todo-shadow);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-typewriter);
+  background: var(--background-gradient);
+  min-height: 100vh;
+  color: var(--todo-ink);
+  line-height: 1.5;
+  transition: background var(--duration-normal) var(--ease-smooth), 
+              color var(--duration-normal) var(--ease-smooth);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

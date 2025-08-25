@@ -1,0 +1,27 @@
+<div class="pwa-status">
+  <!-- Offline Status -->
+  @if (!isOnline()) {
+    <div class="status-banner offline">
+      <span class="status-icon">📱</span>
+      <span class="status-text">You're offline - changes saved locally</span>
+    </div>
+  }
+
+  <!-- Update Available -->
+  @if (updateAvailable()) {
+    <div class="status-banner update">
+      <span class="status-icon">🔄</span>
+      <span class="status-text">New update available</span>
+      <button class="status-btn" (click)="updateApp()">Update</button>
+    </div>
+  }
+
+  <!-- Install App -->
+  @if (isInstallable()) {
+    <div class="status-banner install">
+      <span class="status-icon">⬇️</span>
+      <span class="status-text">Install Daily Tasks app</span>
+      <button class="status-btn" (click)="installApp()">Install</button>
+    </div>
+  }
+</div>

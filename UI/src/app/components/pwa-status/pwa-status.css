@@ -1,0 +1,113 @@
+.pwa-status {
+  position: fixed;
+  top: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  max-width: 400px;
+  width: calc(100% - var(--spacing-2xl));
+}
+
+.status-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: var(--border-width) solid var(--todo-shadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  font-family: var(--font-typewriter);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  animation: slideIn var(--duration-normal) var(--ease-bounce);
+}
+
+.status-banner.offline {
+  background: hsl(30, 50%, 85%);
+  color: hsl(30, 60%, 25%);
+  border-color: hsl(30, 40%, 60%);
+}
+
+.status-banner.update {
+  background: var(--todo-primary);
+  color: white;
+  border-color: var(--todo-shadow);
+}
+
+.status-banner.install {
+  background: var(--todo-success);
+  color: white;
+  border-color: var(--todo-shadow);
+}
+
+.status-icon {
+  font-size: 1.125rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.status-text {
+  flex: 1;
+}
+
+.status-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: calc(var(--border-radius) - 2px);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-typewriter);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-quick) var(--ease-smooth);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-1px, -1px);
+}
+
+.status-btn:active {
+  transform: translate(0, 0);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.status-banner.offline .status-btn {
+  background: hsl(30, 60%, 25%);
+  color: hsl(30, 50%, 85%);
+  border-color: hsl(30, 60%, 25%);
+}
+
+.status-banner.offline .status-btn:hover {
+  background: hsl(30, 70%, 20%);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .pwa-status {
+    top: var(--spacing-sm);
+  }
+  
+  .status-banner {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8125rem;
+  }
+  
+  .status-icon {
+    font-size: 1rem;
+  }
+}

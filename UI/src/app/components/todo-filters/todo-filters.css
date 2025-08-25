@@ -1,0 +1,44 @@
+.todo-filters {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--todo-paper);
+  color: var(--todo-ink);
+  border: var(--border-width) solid var(--todo-shadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-input);
+  font-family: var(--font-typewriter);
+  font-size: 0.875rem;
+  font-weight: 400;
+  transition: all var(--duration-normal) var(--ease-smooth);
+  position: relative;
+}
+
+.filter-btn:hover {
+  box-shadow: var(--shadow-input-focus);
+  transform: translate(-1px, -1px);
+}
+
+.filter-btn.active {
+  background: var(--todo-primary);
+  color: white;
+  box-shadow: var(--shadow-button);
+  transform: translate(-2px, -2px);
+}
+
+.filter-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px var(--todo-shadow);
+}
+
+@media (max-width: 768px) {
+  .filter-btn {
+    flex: 1;
+    min-width: 80px;
+  }
+}

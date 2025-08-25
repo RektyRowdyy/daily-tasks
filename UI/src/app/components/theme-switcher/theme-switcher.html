@@ -1,0 +1,42 @@
+<div class="theme-switcher">
+  <button 
+    class="theme-toggle"
+    (click)="toggleTheme()"
+    [title]="'Current theme: ' + getThemeLabel()"
+    [attr.aria-label]="'Switch theme. Current: ' + getThemeLabel()"
+  >
+    <span class="theme-icon">{{ getThemeIcon() }}</span>
+  </button>
+  
+  <div class="theme-options">
+    <button 
+      class="theme-option"
+      [class.active]="currentTheme() === 'light'"
+      (click)="setTheme('light')"
+      title="Light theme"
+      aria-label="Switch to light theme"
+    >
+      <span class="option-icon">☀️</span>
+    </button>
+    
+    <button 
+      class="theme-option"
+      [class.active]="currentTheme() === 'dark'"
+      (click)="setTheme('dark')"
+      title="Dark theme"
+      aria-label="Switch to dark theme"
+    >
+      <span class="option-icon">🌙</span>
+    </button>
+    
+    <button 
+      class="theme-option"
+      [class.active]="currentTheme() === 'system'"
+      (click)="setTheme('system')"
+      title="System theme"
+      aria-label="Use system theme preference"
+    >
+      <span class="option-icon">💻</span>
+    </button>
+  </div>
+</div>

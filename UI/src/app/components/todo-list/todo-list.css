@@ -1,0 +1,50 @@
+.todo-list-container {
+  flex: 1;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-4xl) var(--spacing-lg);
+}
+
+.empty-message {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  color: var(--todo-ink);
+  opacity: 0.6;
+  transform: rotate(-1deg);
+}
+
+.encouragement {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--todo-accent) 0%, var(--todo-primary) 100%);
+  border: var(--border-width) solid var(--todo-shadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  transform: rotate(0.5deg);
+}
+
+.encouragement p {
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  color: var(--todo-ink);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .todo-list {
+    gap: var(--spacing-md);
+  }
+  
+  .encouragement {
+    margin-top: var(--spacing-lg);
+  }
+}

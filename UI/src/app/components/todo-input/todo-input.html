@@ -1,0 +1,17 @@
+<div class="todo-input-container">
+  <input 
+    type="text"
+    class="todo-input"
+    placeholder="What needs to be done?"
+    [value]="newTodoText()"
+    (input)="onInput($event)"
+    (keydown)="onKeyPress($event)"
+  />
+  <button 
+    type="button"
+    class="todo-add-btn"
+    (click)="onSubmit()"
+  >
+    + Add
+  </button>
+</div>

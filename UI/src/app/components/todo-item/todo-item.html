@@ -1,0 +1,42 @@
+<div class="todo-item" [class.completed]="todo().completed">
+  <div class="todo-content">
+    <button 
+      class="todo-checkbox"
+      [class.checked]="todo().completed"
+      (click)="toggleComplete()"
+    >
+      @if (todo().completed) {
+        <span class="checkmark">✓</span>
+      }
+    </button>
+    
+    @if (isEditing()) {
+      <input 
+        type="text"
+        class="todo-edit-input"
+        [value]="editText()"
+        (input)="onEditInput($event)"
+        (keydown)="onKeyPress($event)"
+        (blur)="saveEdit()"
+        #editInput
+      />
+    } @else {
+      <span class="todo-text" [class.completed]="todo().completed">
+        {{ todo().text }}
+      </span>
+    }
+  </div>
+  
+  <div class="todo-actions">
+    <span class="todo-date">{{ todo().createdAt | date:'M/d/yyyy' }}</span>
+    
+    @if (!isEditing()) {
+      <button class="todo-edit-btn" (click)="startEdit()" title="Edit">
+        ✏️
+      </button>
+      <button class="todo-delete-btn" (click)="deleteTodo()" title="Delete">
+        ✗
+      </button>
+    }
+  </div>
+</div>

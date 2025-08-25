@@ -1,0 +1,23 @@
+<div class="todo-filters">
+  <button 
+    class="filter-btn"
+    [class.active]="currentFilter() === 'all'"
+    (click)="setFilter('all')"
+  >
+    All
+  </button>
+  <button 
+    class="filter-btn"
+    [class.active]="currentFilter() === 'active'"
+    (click)="setFilter('active')"
+  >
+    Active
+  </button>
+  <button 
+    class="filter-btn"
+    [class.active]="currentFilter() === 'done'"
+    (click)="setFilter('done')"
+  >
+    Done
+  </button>
+</div>

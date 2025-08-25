@@ -1,0 +1,19 @@
+<div class="todo-list-container">
+  @if (filteredTodos().length === 0) {
+    <div class="empty-state">
+      <p class="empty-message">Nothing here yet!</p>
+    </div>
+  } @else {
+    <div class="todo-list">
+      @for (todo of filteredTodos(); track todo.id) {
+        <app-todo-item [todo]="todo" />
+      }
+    </div>
+    
+    @if (completedCount() > 0 && totalCount() > completedCount()) {
+      <div class="encouragement">
+        <p>Keep going! You're doing great. ✨</p>
+      </div>
+    }
+  }
+</div>
